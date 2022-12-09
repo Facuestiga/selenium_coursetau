@@ -1,23 +1,17 @@
 package base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
+import extPages.HomePagePagJuli;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-public class BaseTests {
+public class BaseTestsPagJuli {
 
     private WebDriver driver;
-    protected HomePage homePage;
-
+    protected HomePagePagJuli homePagePagJuli;
 
     @BeforeClass
     public void setUp(){
@@ -29,19 +23,19 @@ public class BaseTests {
         driver = new ChromeDriver();
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //-->
-        goHome();
+        goHomeJuli();
 
         //instantiate homePage..
-        homePage = new HomePage(driver);
+        homePagePagJuli = new HomePagePagJuli(driver);
     }
 
     @BeforeMethod
-    public void goHome(){
-        driver.get("https://the-internet.herokuapp.com/");
+    public void goHomeJuli(){
+        driver.get("https://fg-audioyelectronica.com/");
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDownJuli(){
         driver.quit();
     }
 

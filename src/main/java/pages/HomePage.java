@@ -68,7 +68,20 @@ public class HomePage {
         return new FramesPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoadingPage(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
 
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
 
 //*****************//
     // METHOD TO CLICK LINKS
